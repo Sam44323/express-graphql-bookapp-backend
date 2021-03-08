@@ -3,7 +3,9 @@ const { graphqlHTTP } = require('express-graphql');
 
 const app = express();
 
-// app.use('/graphql', graphqlHTTP());
+app.use('/graphql', graphqlHTTP({
+  
+}));
 
 app.get('/', (req, res) => res.json('This is working!'));
 
