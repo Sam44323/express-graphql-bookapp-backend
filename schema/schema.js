@@ -64,8 +64,6 @@ const authors = [
   },
 ];
 
-//defining the object types for the schemas
-
 const BookType = new GraphQLObjectType({
   name: 'Book',
   fields: () => ({
