@@ -6,6 +6,7 @@ const { MONGO_URI } = require('./constants');
 
 const app = express();
 
+//middleware for routing to the graphql schemas
 app.use(
   '/graphql',
   graphqlHTTP({
