@@ -50,8 +50,6 @@ const AuthorType = new GraphQLObjectType({
   }),
 });
 
-//defining a root query for the graphql schema
-
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
