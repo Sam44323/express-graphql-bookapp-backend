@@ -85,8 +85,6 @@ const RootQuery = new GraphQLObjectType({
   },
 });
 
-//adding the mutations query for changing the datas
-
 const Mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
