@@ -8,7 +8,7 @@ _This is the backend repo for a book application that uses GraphQL and express a
 
 - Add new books.
 - Query all the books
-- Get all the matched books from that very author
+- Get all the matched books from a particular author
 
 ---
 
