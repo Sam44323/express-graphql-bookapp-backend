@@ -112,7 +112,7 @@ const Mutation = new GraphQLObjectType({
       type: BookType,
       args: {
         name: {
-          type: GraphQLString,
+          type: new GraphQLNonNull(GraphQLString),
         },
         genre: {
           type: new GraphQLNonNull(GraphQLString),
