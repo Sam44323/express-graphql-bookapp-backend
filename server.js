@@ -1,21 +1,19 @@
-const express = require('express');
-const { graphqlHTTP } = require('express-graphql');
-const bookSchema = require('./schema/schema');
-const mongoose = require('mongoose');
-const { MONGO_URI } = require('./constants');
+const express = require("express");
+const { graphqlHTTP } = require("express-graphql");
+const bookSchema = require("./schema/schema");
+const mongoose = require("mongoose");
+const { MONGO_URI } = require("./constants");
 
 const app = express();
 
 //middleware for routing to the graphql schemas
 app.use(
-  '/graphql',
+  "/graphql",
   graphqlHTTP({
     schema: bookSchema,
     graphiql: true,
   })
 );
-
-app.get('/', (req, res) => res.json('This is working!'));
 
 mongoose
   .connect(MONGO_URI, {
@@ -25,9 +23,9 @@ mongoose
     useCreateIndex: true,
   })
   .then(() => {
-    console.log('Connected to the database!');
+    console.log("Connected to the database!");
     app.listen(5000, () => {
-      console.log('Server is listening!');
+      console.log("Server is listening!");
     });
   })
   .catch((err) => {
