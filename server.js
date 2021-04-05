@@ -3,8 +3,10 @@ const { graphqlHTTP } = require("express-graphql");
 const bookSchema = require("./schema/schema");
 const mongoose = require("mongoose");
 const { MONGO_URI } = require("./constants");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
 
 //middleware for routing to the graphql schemas
 app.use(
