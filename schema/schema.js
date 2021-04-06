@@ -10,6 +10,7 @@ const {
   GraphQLList,
   GraphQLNonNull,
 } = require("graphql");
+const book = require("../models/book");
 
 const BookType = new GraphQLObjectType({
   name: "Book",
@@ -47,7 +48,7 @@ const AuthorType = new GraphQLObjectType({
     books: {
       type: new GraphQLList(BookType), // means a list of elements of type books
       resolve(parent, args) {
-        return _.filter(books, { authorId: parent.id });
+        return Book.find({ authorId: parent.id });
       },
     },
   }),
